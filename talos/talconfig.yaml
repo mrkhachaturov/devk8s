@@ -5,7 +5,7 @@ talosVersion: v1.9.4
 # renovate: datasource=docker depName=ghcr.io/siderolabs/kubelet
 kubernetesVersion: v1.32.2
 
-clusterName: astranova
+clusterName: kubernetes
 endpoint: https://10.1.135.100:6443
 
 clusterPodNets:
@@ -138,6 +138,7 @@ nodes:
           - network: "0.0.0.0/0"
             gateway: "10.1.135.1"
         mtu: 1500
+
 # Global patches
 patches:
   - "@./patches/global/machine-files.yaml"
