@@ -171,3 +171,19 @@ tasks:
       - rm -rf {{.KUBERNETES_DIR}}
       - rm -rf {{.TALOS_DIR}}
       - rm -rf {{.ROOT_DIR}}/.sops.yaml
+
+
+  encrypt-force:
+    cmds:
+      - for: { var: SECRET_FILES }
+        cmd: |
+          sops --decrypt "{{.ITEM}}" > "{{.ITEM}}.tmp" \
+          && mv "{{.ITEM}}.tmp" "{{.ITEM}}" \
+          && sops --encrypt --in-place "{{.ITEM}}"
+    vars:
+      SECRET_FILES:
+        sh: find "{{.BOOTSTRAP_DIR}}" "{{.KUBERNETES_DIR}}" "{{.TALOS_DIR}}" -type f -name "*.sops.*" -print
+    preconditions:
+      - test -f {{.SOPS_AGE_KEY_FILE}}
+      - test -f {{.ROOT_DIR}}/.sops.yaml
+      - which sops jq
