@@ -44,12 +44,6 @@ nodes:
         mtu: 1500
         vip:
           ip: "10.1.135.100"
-      - deviceSelector:
-          hardwareAddr: "bc:24:11:db:14:82"
-        dhcp: false
-        addresses:
-          - "10.1.115.31/24"
-        mtu: 9000
   - hostname: "ivn-k8s-mng02"
     ipAddress: "10.1.135.32"
     installDiskSelector:
@@ -70,12 +64,6 @@ nodes:
         mtu: 1500
         vip:
           ip: "10.1.135.100"
-      - deviceSelector:
-          hardwareAddr: "bc:24:11:64:86:de"
-        dhcp: false
-        addresses:
-          - "10.1.115.32/24"
-        mtu: 9000
   - hostname: "ivn-k8s-mng03"
     ipAddress: "10.1.135.33"
     installDiskSelector:
@@ -96,12 +84,6 @@ nodes:
         mtu: 1500
         vip:
           ip: "10.1.135.100"
-      - deviceSelector:
-          hardwareAddr: "bc:24:11:0e:41:91"
-        dhcp: false
-        addresses:
-          - "10.1.115.33/24"
-        mtu: 9000
   - hostname: "ivn-k8s-wrk01"
     ipAddress: "10.1.135.41"
     installDiskSelector:
@@ -120,12 +102,6 @@ nodes:
           - network: "0.0.0.0/0"
             gateway: "10.1.135.1"
         mtu: 1500
-      - deviceSelector:
-          hardwareAddr: "bc:24:11:e1:19:d3"
-        dhcp: false
-        addresses:
-          - "10.1.115.41/24"
-        mtu: 9000
   - hostname: "ivn-k8s-wrk02"
     ipAddress: "10.1.135.42"
     installDiskSelector:
@@ -144,12 +120,6 @@ nodes:
           - network: "0.0.0.0/0"
             gateway: "10.1.135.1"
         mtu: 1500
-      - deviceSelector:
-          hardwareAddr: "bc:24:11:42:e9:7c"
-        dhcp: false
-        addresses:
-          - "10.1.115.42/24"
-        mtu: 9000
   - hostname: "ivn-k8s-wrk03"
     ipAddress: "10.1.135.43"
     installDiskSelector:
@@ -168,12 +138,6 @@ nodes:
           - network: "0.0.0.0/0"
             gateway: "10.1.135.1"
         mtu: 1500
-      - deviceSelector:
-          hardwareAddr: "bc:24:11:66:25:c0"
-        dhcp: false
-        addresses:
-          - "10.1.115.43/24"
-        mtu: 9000
 # Global patches
 patches:
   - "@./patches/global/machine-files.yaml"
